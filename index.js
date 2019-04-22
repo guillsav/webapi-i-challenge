@@ -13,7 +13,7 @@ server.post('/api/users', (req, res) => {
   const newUser = req.body;
   db.insert(newUser)
     .then(user => {
-      if (!user.name || !user.bio) {
+      if (!user.name === '' || user.bio === '') {
         res
           .status(400)
           .json({errorMessage: 'Please provide name and bio for the user.'});

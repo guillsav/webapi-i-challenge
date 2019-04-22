@@ -12,6 +12,7 @@ const ContactsList = props => {
             name={user.name}
             bio={user.bio}
             onDelete={props.onDelete}
+            targetUser={props.targetUser}
           />
         );
       })}
